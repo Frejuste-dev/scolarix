@@ -40,7 +40,24 @@ Uses Replit's built-in PostgreSQL database. Connection via `DATABASE_URL` enviro
 - Academic operations
 - Reports dashboard
 
+## API Endpoints
+- `/api/auth` - Authentication (login/logout)
+- `/api/users` - User CRUD operations
+- `/api/students` - Student management
+- `/api/teachers` - Teacher management
+- `/api/academic` - Academic years, filieres management
+- `/api/periods` - Period management with year_id filter
+- `/api/classes` - Class management with year_id filter and filiere data
+- `/api/subjects` - Subject CRUD
+- `/api/class-subjects` - Class-subject assignments
+- `/api/sessions` - Session scheduling
+- `/api/evaluations` - Evaluations/grades management
+- `/api/reports` - Reporting endpoints
+
 ## Recent Changes
+- 2025-12-16: Added year_id filter to periods and classes endpoints
+- 2025-12-16: Created full CRUD endpoints for subjects, sessions, evaluations, reports
+- 2025-12-16: Connected all frontend services to real backend APIs
 - 2025-12-16: Migrated from MySQL to PostgreSQL for Replit environment
 - 2025-12-16: Configured Vite for Replit proxy compatibility
 - 2025-12-16: Set up combined frontend/backend workflow
