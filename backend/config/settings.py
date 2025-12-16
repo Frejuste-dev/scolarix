@@ -1,14 +1,9 @@
 from pydantic_settings import BaseSettings
-
-from pydantic import Field
+import os
 
 class Settings(BaseSettings):
-    DB_HOST: str = "127.0.0.1"
-    DB_PORT: int = 3306
-    DB_USER: str = Field(alias="DB_USERNAME")
-    DB_PASSWORD: str = ""
-    DB_NAME: str = Field(alias="DB_DATABASE")
-    SECRET_KEY: str
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "")
+    SECRET_KEY: str = os.getenv("SECRET_KEY", "default-secret-key-change-in-production")
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
